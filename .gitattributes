@@ -1,0 +1,12 @@
+# Mark lock files as generated so they don't count towards language stats
+package-lock.json linguist-generated
+yarn.lock linguist-generated
+pnpm-lock.yaml linguist-generated
+
+# Mark assets as vendored (optional, to reduce noise)
+*.svg linguist-vendored
+*.css linguist-vendored
+*.scss linguist-vendored
+
+# Ensure Python is always detected
+*.py linguist-detectable
