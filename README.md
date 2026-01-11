@@ -16,34 +16,6 @@
 
 ---
 
-## 🖼️ Gallery
-
-### � Login Screen
-*(Save as `assets/screenshots/login.png`)*
-![Login Screen](./assets/screenshots/login.png)
-
-### �🖥️ Dashboard
-*(Save as `assets/screenshots/dashboard.png`)*
-![Dashboard](./assets/screenshots/dashboard.png)
-
-### 🤖 AI Coach
-*(Save as `assets/screenshots/coach.png`)*
-![AI Coach](./assets/screenshots/coach.png)
-
-### 🎭 Face DJ
-*(Save as `assets/screenshots/facedj.png`)*
-![Face DJ](./assets/screenshots/facedj.png)
-
-### 🌊 Brainwaves
-*(Save as `assets/screenshots/brainwaves.png`)*
-![Brainwaves](./assets/screenshots/brainwaves.png)
-
-### 🌌 Galaxy View
-*(Save as `assets/screenshots/galaxy.png`)*
-![Galaxy View](./assets/screenshots/galaxy.png)
-
----
-
 ## 📂 System Architecture
 
 The project follows a **Monorepo** structure separating the specialized AI backend from the interactive frontend.
@@ -60,8 +32,8 @@ The project follows a **Monorepo** structure separating the specialized AI backe
 
 **1. Clone the Repo**
 ```bash
-git clone https://github.com/your-username/aura-monorepo.git
-cd aura-monorepo
+git clone https://github.com/laxmi2577/aura-platform.git
+cd aura-platform
 ```
 
 **2. Setup Backend**
@@ -83,10 +55,18 @@ npm run dev
 
 Visit **http://localhost:3000** to start the experience.
 
+## 🌐 Live Demo
+
+| Component | URL |
+|-----------|-----|
+| **Frontend** | [https://aura-ai-liard-eight.vercel.app](https://aura-ai-liard-eight.vercel.app) |
+| **Backend API** | [https://laxmiranjan444-aura-ml-brain.hf.space](https://laxmiranjan444-aura-ml-brain.hf.space) |
+
 ## 🛠️ Contribution
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+
 ## 👤 Author
 
 **Laxmiranjan Sahu**
@@ -94,6 +74,28 @@ Visit **http://localhost:3000** to start the experience.
 - 🌐 **LinkedIn**: [laxmiranjan](https://www.linkedin.com/in/laxmiranjan/)
 - 🐙 **GitHub**: [@laxmi2577](https://github.com/laxmi2577)
 - 📧 **Email**: laxmiranjan444@gmail.com
+
+---
+
+## 🖼️ Gallery
+
+### 🔐 Login Screen
+![Login Screen](./assets/screenshots/login.png)
+
+### 🖥️ Dashboard
+![Dashboard](./assets/screenshots/dashboard.png)
+
+### 🤖 AI Coach
+![AI Coach](./assets/screenshots/coach.png)
+
+### 🎭 Face DJ
+![Face DJ](./assets/screenshots/facedj.png)
+
+### 🌊 Brainwaves
+![Brainwaves](./assets/screenshots/brainwaves.png)
+
+### 🌌 Galaxy View
+![Galaxy View](./assets/screenshots/galaxy.png)
 
 ---
 *Built with ❤️ by Laxmiranjan Sahu*
