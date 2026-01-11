@@ -1,8 +1,30 @@
 # Aura AI: Frontend Experience 🎨
 
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](../LICENSE)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://aura-ai-liard-eight.vercel.app)
+
 > **The Interactive Interface for the Aura Intelligent Audio Platform.**
 
 Aura AI is a modern, responsive web application built with **Next.js 16** and **React**. It provides a seamless interface for users to interact with the Aura ML Brain, exploring sounds, visualizing audio, and experiencing the multimodal "Face DJ" feature.
+
+---
+
+## 📑 Table of Contents
+
+- [✨ Key Features](#-key-features)
+- [🛠️ Tech Stack](#️-tech-stack)
+- [🚀 Getting Started](#-getting-started)
+- [📂 Project Structure](#-project-structure)
+- [⚙️ Configuration](#️-configuration)
+- [📸 Screenshots](#-screenshots)
+- [🛠️ Contributing](#️-contributing)
+- [📄 License](#-license)
+- [👤 Author](#-author)
+
+---
 
 ## ✨ Key Features
 
@@ -41,33 +63,24 @@ Find sounds using natural language (e.g., "sounds for studying" or "cozy rain") 
 ### 🔒 Admin Sound Upload
 Upload new sounds to the platform directly from the UI.
 > **Note**: This feature is restricted to the Admin Email configured in the code.
-- **Access**: Only authorized emails can see the "Upload" button.
-- **Path**: `src/components/features/sound-library/SoundLibrary.tsx`
 
 ### 📊 Audio Visualization
 Real-time waveform rendering of playing tracks using the Web Audio API and Canvas.
 
-## ⚙️ Configuration
-
-To enable **Admin Features** (like uploading sounds), you must add your email to the allowlist in the code:
-
-1.  Open `src/components/features/sound-library/SoundLibrary.tsx`
-2.  Find the `ADMIN_EMAIL` constant:
-    ```typescript
-    const ADMIN_EMAIL = "your-email@gmail.com"
-    ```
-3.  Replace it with your email address.
-    *(Also check `src/app/(main)/layout.tsx` for sidebar visibility settings)*
+---
 
 ## 🛠️ Tech Stack
 
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
-- **Language**: TypeScript
-- **Styling**: [TailwindCSS](https://tailwindcss.com/) + CSS Variables
-- **Icons**: Lucide React
-- **State Management**: React Hooks (Context API)
-- **API Integration**: Axios / Native Fetch
-- **Visuals**: Canvas API for Waveforms
+| Technology | Purpose |
+|------------|---------|
+| ![Next.js](https://img.shields.io/badge/Next.js-000?logo=nextdotjs&logoColor=fff) | Framework (App Router) |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff) | Type Safety |
+| ![TailwindCSS](https://img.shields.io/badge/Tailwind-38B2AC?logo=tailwind-css&logoColor=fff) | Styling |
+| ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000) | UI Library |
+| ![Zustand](https://img.shields.io/badge/Zustand-000?logo=react&logoColor=fff) | State Management |
+| ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=fff) | Database & Auth |
+
+---
 
 ## 🚀 Getting Started
 
@@ -78,23 +91,31 @@ To enable **Admin Features** (like uploading sounds), you must add your email to
 
 ### Installation
 
-1.  **Install dependencies:**
-    ```bash
-    npm install
-    # or
-    yarn install
-    ```
+1. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-2.  **Configure Environment:**
-    Ensure you have the valid `.env.local` (if required by specific features, though defaults often work for dev).
+2. **Configure Environment:**
+   Create a `.env.local` file with your credentials:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+   NEXT_PUBLIC_API_URL=http://localhost:8000
+   NEXT_PUBLIC_AURA_API_KEY=your-api-key
+   ```
 
-3.  **Run the Development Server:**
-    ```bash
-    npm run dev
-    ```
+3. **Run the Development Server:**
+   ```bash
+   npm run dev
+   ```
 
-4.  **Open the App:**
-    Visit `http://localhost:3000` in your browser.
+4. **Open the App:**
+   Visit `http://localhost:3000` in your browser.
+
+---
 
 ## 📂 Project Structure
 
@@ -104,47 +125,41 @@ aura-ai/
 │   ├── app/                    # Next.js App Router (Routing & Layouts)
 │   │   ├── (auth)/             # Authentication Routes (Login/Register)
 │   │   ├── (main)/             # Main Application Routes (Protected)
-│   │   │   ├── layout.tsx      # Main Dashboard Layout
-│   │   │   └── page.tsx        # Home Page
-│   │   ├── api/                # Next.js API Routes (Server-side Proxy)
-│   │   └── globals.css         # Global Styles & Tailwind Directives
+│   │   └── api/                # Next.js API Routes (Server-side Proxy)
 │   ├── components/
 │   │   ├── features/           # Feature-Specific Components (15+ Modules)
 │   │   │   ├── ai-coach/       # Intelligent Assistant
-│   │   │   ├── audio-player/   # Global Player Controls
 │   │   │   ├── binaural-beats/ # Brainwave Entrainment
-│   │   │   ├── breathwork/     # Guided Breathing Exercises
 │   │   │   ├── face-dj/        # Emotion-based Music generation
 │   │   │   ├── galaxy/         # 3D Visualizer
-│   │   │   ├── guide/          # User Onboarding
-│   │   │   ├── shortcuts/      # Keyboard Shortcuts
-│   │   │   ├── social/         # Social Sharing Support
 │   │   │   ├── sound-library/  # Discovery Grid
 │   │   │   ├── sound-mixer/    # Multi-track Mixer
-│   │   │   ├── system/         # System Utilities
-│   │   │   ├── theme/          # Feature-level Theme Logic
-│   │   │   ├── voice-control/  # Voice Command Interface
-│   │   │   └── zen-mode/       # Distraction-free Mode
-│   │   ├── theme/              # Global Theme Provider & Toggles
-│   │   ├── ui/                 # Reusable Radix/Shadcn Components
-│   │   └── shared/             # Layout Shell (Sibebar, Header)
+│   │   │   └── ...
+│   │   └── ui/                 # Reusable Radix/Shadcn Components
 │   ├── lib/                    # Core Business Logic & Utilities
-│   │   ├── api-client/         # Axios/Fetch Wrappers
-│   │   ├── supabase/           # Database Configuration
-│   │   ├── audio/              # Audio Engine
-│   │   └── ...
-│   ├── store/                  # Global State (Zustand)
-│   └── ...
-├── public/                     # Static Assets (Images, Icons)
-├── .env.local                  # Environment Variables (Secrets)
-├── next.config.ts              # Next.js Configuration
-├── tailwind.config.ts          # Tailwind Styling Config
+│   └── store/                  # Global State (Zustand)
+├── public/                     # Static Assets
 └── ...
 ```
 
+---
+
+## ⚙️ Configuration
+
+To enable **Admin Features** (like uploading sounds), add your email to the allowlist:
+
+1. Open `src/components/features/sound-library/SoundLibrary.tsx`
+2. Find and update the `ADMIN_EMAIL` constant:
+   ```typescript
+   const ADMIN_EMAIL = "your-email@gmail.com"
+   ```
+
+---
+
 ## 📸 Screenshots
 
-> *Please add your screenshots to the `assets/screenshots` folder with the names below.*
+<details>
+<summary>Click to view screenshots</summary>
 
 ### 1. Login Screen
 ![Login Screen](../assets/screenshots/login.png)
@@ -163,3 +178,39 @@ aura-ai/
 
 ### 6. Galaxy Visualizer
 ![Galaxy](../assets/screenshots/galaxy.png)
+
+</details>
+
+---
+
+## 🛠️ Contributing
+
+Contributions are welcome! Please see the [CONTRIBUTING.md](../CONTRIBUTING.md) file for guidelines.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](../LICENSE) file for details.
+
+---
+
+## 👤 Author
+
+**Laxmiranjan Sahu**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/laxmiranjan/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/laxmi2577)
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:laxmiranjan444@gmail.com)
+
+---
+
+<p align="center">
+  <i>Part of the <a href="../README.md">Aura Platform</a></i>
+</p>
