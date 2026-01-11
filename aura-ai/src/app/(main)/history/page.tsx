@@ -52,8 +52,9 @@ export default function HistoryPage() {
 
         if (data) {
           for (const item of data) {
-            // @ts-ignore
-            const sound = item.sounds
+            // Supabase returns sounds as object (single) or array (multiple)
+            const soundData = item.sounds as unknown
+            const sound = Array.isArray(soundData) ? soundData[0] : soundData as { id: string; title: string; file_url: string } | null
 
             if (sound && !seenIds.has(sound.id)) {
               seenIds.add(sound.id)
