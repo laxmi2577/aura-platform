@@ -1,8 +1,8 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY || ""
+const API_KEY = process.env.NEXT_PUBLIC_AURA_API_KEY || ""
 
 if (!API_KEY) {
-    console.warn("⚠️ Warning: NEXT_PUBLIC_API_KEY is not set.")
+    console.warn("⚠️ Warning: NEXT_PUBLIC_AURA_API_KEY is not set.")
 }
 
 /**
