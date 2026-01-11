@@ -65,7 +65,8 @@ export default function AdminUploadPage() {
 
       setStatus("Running Neural Network (Classification)...")
       try {
-        const cnnRes = await fetch("http://127.0.0.1:8000/classify-custom", {
+        const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
+        const cnnRes = await fetch(`${API_URL}/classify-custom`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ file_url: publicUrl }),

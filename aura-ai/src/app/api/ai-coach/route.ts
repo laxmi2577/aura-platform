@@ -16,10 +16,11 @@ export async function POST(req: Request) {
     console.log(`🤖 AI Coach received: "${message}"`)
 
     // Parallel execution of vector search requests for performance optimization
-    const API_KEY = process.env.NEXT_PUBLIC_AURA_API_KEY || ""
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"
+    const API_KEY = process.env.NEXT_PUBLIC_API_KEY || ""
 
     const [soundRes, knowledgeRes] = await Promise.all([
-      fetch("http://127.0.0.1:8000/search", {
+      fetch(`${API_URL}/search`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +28,7 @@ export async function POST(req: Request) {
         },
         body: JSON.stringify({ query: message, match_count: 10, match_threshold: 0.1 }),
       }),
-      fetch("http://127.0.0.1:8000/search-knowledge", {
+      fetch(`${API_URL}/search-knowledge`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
