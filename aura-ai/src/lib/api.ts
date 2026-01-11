@@ -26,7 +26,9 @@ export async function fetchAI(endpoint: string, options: RequestInit = {}) {
     })
 
     if (!response.ok) {
-        throw new Error(`AI API Error: ${response.statusText}`)
+        const errorBody = await response.text().catch(() => "Could not read error body")
+        console.error(`API Error: ${response.status} ${response.statusText} - ${errorBody}`)
+        throw new Error(`AI API Error: ${response.statusText || response.status}`)
     }
 
     return response.json()
