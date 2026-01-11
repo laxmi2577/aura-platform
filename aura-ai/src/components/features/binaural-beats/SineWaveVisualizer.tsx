@@ -15,8 +15,8 @@ interface SineWaveProps {
  */
 export default function SineWaveVisualizer({ isPlaying, baseFreq, beatFreq }: SineWaveProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
-  const phaseRef = useRef(0)
+  const animationRef = useRef<number | undefined>(undefined)
+  const phaseRef = useRef<number>(0)
 
   useEffect(() => {
     const canvas = canvasRef.current
